@@ -80,7 +80,7 @@ loop do #------------------Main loop---------------------
     prompt(MESSAGES['invalid_entry'])
   end
 
-  j = anual_interest_rate.to_f / MONTHS_IN_YEAR # j = monthly interese rate
+  j = anual_interest_rate.to_f / MONTHS_IN_YEAR # j = monthly interest rate
   n = loan_duration_years.to_i * MONTHS_IN_YEAR # n = loan duration in months
   clear
   prompt("Your monthly payment is $#{format('%0.2f', payment_months(p, j, n))}")
