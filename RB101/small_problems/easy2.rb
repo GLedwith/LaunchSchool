@@ -78,3 +78,9 @@ end
 
 # Option 2:
 (1..99).select { |num| puts num if num.odd? }
+
+# Exercise 7: Even numbers
+
+(1..99).map { |num| puts num if num % 2 == 0 }
+
+# Exercise 8: Sum or Product of Consecutive Integers
