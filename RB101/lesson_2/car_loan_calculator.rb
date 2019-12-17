@@ -1,6 +1,6 @@
 # Car loan calculator:
 # p = loan amount
-# j = monthly interst rate
+# j = monthly interest rate
 # n = loan duration in months
 
 require 'yaml'
