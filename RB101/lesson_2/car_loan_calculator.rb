@@ -59,7 +59,7 @@ def another_calculation?
 end
 
 def monthly_payment(amount, monthly_int, loan_in_months)
-  amount.to_i * (monthly_int / (1 - (1 + monthly_int)**(-loan_in_months)))
+  amount.to_f * (monthly_int / (1 - (1 + monthly_int)**(-loan_in_months)))
 end
 
 def retrieve_name
