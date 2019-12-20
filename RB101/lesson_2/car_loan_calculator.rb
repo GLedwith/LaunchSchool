@@ -85,7 +85,7 @@ loop do #------------------Main loop---------------------
   loan_in_months = loan_duration_years.to_f * MONTHS_IN_YEAR
 
   clear
-  puts "Your monthly payment is:"
+  prompt(MESSAGES['monthly_payment'])
   prompt"$#{monthly_payment(amount, monthly_int, loan_in_months).round(2)}"
 
   break unless another_calculation?
