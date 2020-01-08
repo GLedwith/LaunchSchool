@@ -1,5 +1,5 @@
 # # Exercise 1: Searching 101
-#
+
 numbers = []
 
 puts '>> Enter the 1st number:'
