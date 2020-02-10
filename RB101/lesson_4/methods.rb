@@ -1,64 +1,64 @@
 # #each method
 
-# numbers = [1, 2, 3]
-# counter = 0
-#
-# loop do
-#   break if counter == numbers.size
-#   puts numbers[counter]
-#   counter += 1
-# end
-#
-# [1, 2, 3].each do |num|
-#   puts num
-# end
-#
-# hash = { a: 1, b: 2, c: 3 }
-#
-# hash.each do |key, value|
-#   puts "The key is #{key} and the value is #{value}"
-# end
+numbers = [1, 2, 3]
+counter = 0
 
-# def a_method
-#   [1, 2, 3].each do |num|
-#     puts num * 2
-#   end
-# end
-#
-# def a_method
-#   [1, 2, 3].each do |num|
-#     puts num * 2
-#   end
-#
-#   puts 'hi'
-# end
+loop do
+  break if counter == numbers.size
+  puts numbers[counter]
+  counter += 1
+end
+
+[1, 2, 3].each do |num|
+  puts num
+end
+
+hash = { a: 1, b: 2, c: 3 }
+
+hash.each do |key, value|
+  puts "The key is #{key} and the value is #{value}"
+end
+
+def a_method
+  [1, 2, 3].each do |num|
+    puts num * 2
+  end
+end
+
+def a_method
+  [1, 2, 3].each do |num|
+    puts num * 2
+  end
+
+  puts 'hi'
+end
 
 # #select method
 
-# numbers = [1, 2, 3]
-# counter =  0
-#
-# loop do
-#   break if counter == numbers.size
-#   number = numbers[counter]
-#   puts number if number % 2 == 1
-#   counter += 1
-# end
-#
-# [1, 2, 3].select do |num|
-#   num.odd?
-# end
-#
-# [1, 2, 3].select do |num|
-#   num + 1
-# end
-#
-# [1, 2, 3].select do |num|
-#   num + 1
-#   puts num
-# end
+numbers = [1, 2, 3]
+counter =  0
 
-# map method
+loop do
+  break if counter == numbers.size
+  number = numbers[counter]
+  puts number if number % 2 == 1
+  counter += 1
+end
+
+[1, 2, 3].select do |num|
+  num.odd?
+end
+
+[1, 2, 3].select do |num|
+  num + 1
+end
+
+[1, 2, 3].select do |num|
+  num + 1
+  puts num
+end
+
+# #map method
 
 [1, 2, 3].map do |num|
   num * 2
@@ -128,3 +128,18 @@ end
 # Enumerable#include?
 
 [1, 2, 3].include?(1)
+
+{ a: "ant", b: "bear", c: "cat" }.include?("ant")
+
+
+{ a: "ant", b: "bear", c: "cat" }.include?(:a)
+
+# Enumerabele#partition
+
+[1, 2, 3].partition do |num|
+  num.odd?
+end
+
+odd, even = [1, 2, 3].partition do |num|
+  num.odd?
+end
