@@ -1,0 +1,9 @@
+
+welcome: "Welcome to rock, paper, scissors, lizard, spock"
+name: "Please enter your name:"
+invalid_name: "Please Enter a valid name to continue"
+invalid_choice:
+play_round:
+show_choices:
+show_score:
+goodbye: "Thank you for playing, goodbye!"
