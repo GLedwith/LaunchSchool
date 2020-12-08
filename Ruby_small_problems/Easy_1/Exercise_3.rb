@@ -15,30 +15,33 @@ Output: array of integers
 Data structures:
 Array
 
-4: Describe Algorithm
+4: Algorithm
 - create a method called digit_list that takes one argument (an integer)
-- convert integer into an array that contains all the digits
-
-
+- create an empty array called results
+- convert integer into a string
+- convert string into an array of characters
+- iterate through array of characters
+- convert each character into an integer and move it to results array
+- return results array
 =end
 
-# Option 1:
+# option 1:
 
 def digit_list(int)
+  results = []
+  string_arr = int.to_s.chars
 
+  string_arr.each do |element|
+    results << element.to_i
+  end
+  results
 end
-
-
-
-
-
 
 # option 2:
 
-def digit_list(int)
-  int.digits.reverse
-end
-
+# def digit_list(int)
+#   int.digits.reverse
+# end
 
 puts digit_list(12345) == [1, 2, 3, 4, 5]     # => true
 puts digit_list(7) == [7]                     # => true
