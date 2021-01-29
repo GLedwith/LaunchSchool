@@ -242,8 +242,6 @@ loop do # ========== Main game loop ======================
     update_score(board, score)
     display_score(score)
     display_round_winner(board)
-    # update_score(board, score)
-    # display_score(score)
 
     break if overall_winner?(score)
   end
