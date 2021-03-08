@@ -151,7 +151,6 @@ def create_card_sections(card)
   card_value = "│ #{card[0].ljust(WIDTH - 1)}│"
   card_middle = ["│#{WHITE_SPACES * WIDTH}│"] * HEIGHT
   card_suit = "│#{card[1].rjust(WIDTH - 1)} │"
-
   card_bottom = "└#{LINE * WIDTH}┘"
 
   [card_top, card_value, card_middle, card_suit, card_bottom].flatten
@@ -179,7 +178,7 @@ def display_card_sections(sections_arr)
   nested_arr.size.times { |index| puts nested_arr[index].join(' ') }
 end
 
-def display_all_cards(player_cards, dealer_cards, player_total)
+def display_all_cards(player_cards, dealer_cards, player_total, dealer_total)
   player_card_sections = store_card_sections(player_cards)
 
   display_player_cards(player_card_sections, player_total)
@@ -188,7 +187,7 @@ def display_all_cards(player_cards, dealer_cards, player_total)
   dealer_card_sections = store_card_sections(dealer_cards)
   blank_line
   display_dealer_cards(dealer_card_sections)
-  prompt "Dealer total: #{total(dealer_cards)}"
+  prompt "Dealer total: #{dealer_total}"
 end
 
 def display_round_results(player_total, dealer_total)
@@ -237,7 +236,7 @@ def play_again
   answer = ''
   loop do
     prompt "Would you like to play again? (y / n)"
-    answer = gets.chomp
+    answer = gets.chomp.downcase 
     break if %w(y yes n no).include?(answer)
     prompt "That's an invalid answer, please enter (y or n)"
   end
@@ -264,7 +263,6 @@ loop do # === main game loop ===
     last_dealer_card = hide_dealer_card!(dealer_cards)
 
     player_total = total(player_cards)
-    dealer_total = total(dealer_cards)
 
     player_card_sections = store_card_sections(player_cards)
     dealer_card_sections = store_card_sections(dealer_cards)
@@ -285,12 +283,11 @@ loop do # === main game loop ===
       dealers_turn(dealer_cards, last_dealer_card)
       dealer_hits(dealer_cards, deck)
 
-      dealer_total = total(dealer_cards)
-      break if busted?(dealer_total)
       break
     end
 
-    display_all_cards(player_cards, dealer_cards, player_total)
+    dealer_total = total(dealer_cards)
+    display_all_cards(player_cards, dealer_cards, player_total, dealer_total)
     blank_line
     display_round_results(player_total, dealer_total)
     blank_line
