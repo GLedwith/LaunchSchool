@@ -236,7 +236,7 @@ def play_again
   answer = ''
   loop do
     prompt "Would you like to play again? (y / n)"
-    answer = gets.chomp.downcase 
+    answer = gets.chomp.downcase
     break if %w(y yes n no).include?(answer)
     prompt "That's an invalid answer, please enter (y or n)"
   end
